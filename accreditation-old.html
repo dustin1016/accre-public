@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accreditation Dashboard</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+    <link rel="stylesheet" href="node_modules/viewerjs/dist/viewer.css">
+</head>
+<body>
+  
+
+   <!-- header banner -->
+   <div class="container-fluid bg-psu py-2 px-0">
+    <div class="container">
+        <div class="d-flex flex-row bd-highlight">
+       
+            <div class="p-2 bd-highlight top-bar-item">   
+                <img src="img/icons/mail.png" height="20" width="20" alt="fb icon" class="me-2">psubataraza@gmail.com
+            </div>
+            <div class="p-2 bd-highlight top-bar-item">
+                <img src="img/icons/telephone.png" height="20" width="20" alt="fb icon" class="me-2">(048) 123-4567
+            </div>
+            <div class="p-2 bd-highlight top-bar-item log-link">
+              <a href="login" class="text-dark text-decoration-none"><img src="img/profile-removebg-preview.png" height="20" width="20" alt="fb icon" class="me-2">Login</a>
+            </div>
+
+            <div class="p-2 bd-highlight top-bar-item log-link d-none">
+              <a href="javascript:void(0);" onClick="logout()" class="text-dark text-decoration-none"><img src="img/logout.png" height="20" width="20" alt="fb icon" class="me-2">Logout</a>
+            </div>
+           
+           
+         
+           
+        </div>
+
+    </div>
+  </div>
+  <div class="position-relative w-100">
+    <div class="position-absolute w-50 top-0 end-0 text-end p-4" style="z-index: 10;">
+     <img src="img/logo-2.jpg" id="banner-logo" class="rounded-circle" alt="">
+   </div>
+  
+    <div class="slicker" style="z-index: 1;">
+     <div><img src="img/carousel/front-1.jpg" class="w-100"></div>
+     <div><img src="img/scene/officials.jpg" class="w-100"></div>
+     <div><img src="img/scene/conference.jpg" class="w-100"></div>
+     <div><img src="img/scene/grad-pic.jpg" class="w-100"></div>
+    </div>
+    <div class="position-absolute text-light px-4 jumbotron-text d-none d-sm-block" style="z-index: 10;">
+     <p class="display-1">PSU-Bataraza</p>
+     <p class="lead">An internationally recognized university that provides relevant and innovative education and research for lifelong learning and sustainable development.</p>
+   </div>
+  </div>
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/psub"><img src="img/psu-logo.png"  height="30" width="30" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="/psub">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Accreditation</a>
+          </li>
+          <li class="nav-item  admin-links d-none" id="docLink">
+            <a class="nav-link" href="/psub/documents.html">Upload</a>
+          </li>
+          <li class="nav-item admin-links d-none"  id="userLink">
+            <a class="nav-link " href="/psub/users.html">Users</a>
+          </li>
+         
+         
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid min-vh-100 position-relative p-3" style="z-index: 1;" id="main">
+    <div class="clearfix">
+        <!-- <div class="d-none d-md-block">
+            <h6 class="mb-3">Filters:</h6>
+            <ul class="nav nav-fill text-center">
+                <li class="nav-item file-link" data-type="img">
+                    <a href="javascript:void(0);"  class="text-decoration-none text-dark">
+                        <img src="img/file-icons/jpeg.png" style="transform: rotate(45deg);" height="30" width="30" alt="photo icon" /><br>
+                        Images
+                      </a>
+                </li>
+                <li class="nav-item file-link" data-type="pdf">
+                    <a href="javascript:void(0);"  class="text-decoration-none text-dark">
+                        <img src="img/file-icons/pdf.png" style="transform: rotate(45deg);" height="30" width="30" alt="pdf icon" /><br>
+                        PDF
+                      </a>
+                </li>
+                <li class="nav-item file-link" data-type="doc">
+                    <a href="javascript:void(0);"  class="text-decoration-none text-dark">
+                        <img src="img/file-icons/docx.png" style="transform: rotate(45deg);" height="30" width="30" alt="document icon" /><br>
+                        Document
+                      </a>
+                </li>
+
+                <li class="nav-item file-link" data-type="xls">
+                    <a href="javascript:void(0);"  class="text-decoration-none text-dark">
+                      <img src="img/file-icons/xlsx.png" style="transform: rotate(45deg);" height="30" width="30" alt="document icon" /><br>
+                      SpreadSheet
+                    </a>
+                  </li>
+    
+                  <li class="nav-item rounded">
+                    <a href="javascript:void(0);"  class="text-decoration-none text-dark" onclick="resetFilters()">
+                      <img src="img/file-icons/reset.png" style="transform: rotate(45deg);" height="30" width="30" alt="reset icon" /><br>
+                      Reset Filters
+                    </a>
+                  </li>
+                
+              </ul>
+        </div> -->
+    
+      <div class="row d-none">
+       
+        <!-- side bar -->
+        <div class="d-none col-12 col-md-1 col-lg-1 min-vh-100 bg-light py-2 px-0 text-white text-center">
+          <div class="col-wrap position-fixed top-0">
+            <ul class="list-unstyled">
+              <li class="mb-3 py-2 ms-0 ms-lg-2 rounded text-center">
+                <a href="accreditors" onclick="()=>{$('.file-link').removeClass('active')}">
+                  <img src="img/icons/pineapple-transparent-cropped.webp" style="transform: rotate(45deg);" height="50" width="30" alt="pineapple" />
+                </a>
+              </li>
+
+              <li class="mb-3 ms-0 ms-lg-2 py-2 rounded file-link" data-type="img">
+                <a href="javascript:void(0);"  class="text-decoration-none text-dark">
+                  <img src="img/file-icons/jpeg.png" style="transform: rotate(45deg);" height="30" width="30" alt="photo icon" /><br>
+                  Images
+                </a>
+              </li>
+
+              <li class="mb-3 ms-0 ms-lg-2 py-2 rounded file-link" data-type="pdf">
+                <a href="javascript:void(0);"  class="text-decoration-none text-dark">
+                  <img src="img/file-icons/pdf.png" style="transform: rotate(45deg);" height="30" width="30" alt="pdf icon" /><br>
+                  PDF
+                </a>
+              </li>
+
+              <li class="mb-3 py-2 rounded file-link" data-type="doc">
+                <a href="javascript:void(0);"  class="text-decoration-none text-dark">
+                  <img src="img/file-icons/docx.png" style="transform: rotate(45deg);" height="30" width="30" alt="document icon" /><br>
+                  Document
+                </a>
+              </li>
+
+              <li class="mb-3 ms-0 ms-lg-2 py-2 rounded file-link" data-type="xls">
+                <a href="javascript:void(0);"  class="text-decoration-none text-dark">
+                  <img src="img/file-icons/xlsx.png" style="transform: rotate(45deg);" height="30" width="30" alt="document icon" /><br>
+                  SpreadSheet
+                </a>
+              </li>
+
+              <li class="mb-5 ms-0 ms-lg-2 py-2 rounded">
+                <a href="javascript:void(0);"  class="text-decoration-none text-dark" onclick="resetFilters()">
+                  <img src="img/file-icons/reset.png" style="transform: rotate(45deg);" height="30" width="30" alt="reset icon" /><br>
+                  Reset Filters
+                </a>
+              </li>
+
+
+              <li class="mt-5 ms-0 ms-lg-2 py-2">
+                 <a href="javascript:void(0);" onclick="confirmLogout()" class="text-decoration-none text-dark ">
+              <img src="img/logout.png" height="20" width="30" alt="logout  icon" /><br>
+              Logout
+              </a>
+              </li>
+
+             
+              
+            </ul>
+          </div>
+    
+        </div>
+        <!-- /side bar -->
+  
+  
+        <!-- File Directory -->
+        <div class="col-12 col-sm-6 col-md-8 p-1" id="fileDirectory">
+          <div class="mb-1 p-1 ">
+            <label for="areas" class="form-label text-white">Accreditation Area</label>
+            <select class="form-control" name="areas" id="areas">
+              <option value="0" disabled selected>-- Select Accreditation Area --</option>
+              <option >Vision & Mission, Goals & Objectives</option>
+              <option>Faculty</option>
+              <option>Curriculum</option>
+              <option>Student Support</option>
+              <option>Research</option>
+              <option>Extension</option>
+              <option>Library</option>
+              <option>Physical Plants Facilities</option>
+              <option>Laboratories</option>
+              <option>Administration</option>
+            </select>
+            <div class="w-100 p-1 text-info fs-6">
+              <p id="filterText">No Directory Selected</p>
+            </div>
+          </div>
+
+
+
+          <!-- Directory View Port -->
+          <div class="container mt-1 mt-md-4 " style="overflow-y: scroll; height: 70vh;">
+             <div class="row w-100 py-1 py-sm-4" id="filePort">
+              
+            </div>
+          </div>
+
+
+          <!-- /Directory View Port -->
+         
+        </div>
+       <!-- /File Directory -->
+        
+       
+       <!-- File preview -->
+       <div class="col-sm-6 col-md-4 min-vh-100 bg-light py-2 d-none d-sm-block">
+          <div class="col-wrap text" id="summaryPort">
+            
+          </div>
+        </div>
+  
+      </div>
+
+
+
+
+
+
+      <div class="container">
+        <div class="mb-3">
+          <label for="" class="form-label">Select Department</label>
+          <select class="form-select form-select-sm" name="dept" id="dept">
+            
+            <option value="1" selected>Bachelor of Science in Information Technology</option>
+            <option value="2">Bachelor of Elementary Education</option>
+            <option value="3">Bachelor of Science in Business Administration</option>
+            <option value="4">Bachelor of Science in Accountancy</option>
+          </select>
+        </div>
+        <div class="checklist-area">
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- bottom nav for mobile -->
+    <!-- <div class="d-block d-md-none container-fluid bg-light border-top border-dark border-1 position-fixed px-0 bottom-0 start-0" style="height: 70px;z-index: 10;">
+      <ul class="nav text-center justify-content-center">
+        <li class="nav-item main-item d-inline-block p-1">
+          
+          <a href="javascript:void(0);" data-type="img"  class="nav-link file-link text-decoration-none text-dark">
+            <img src="img/file-icons/jpeg.png" style="transform: rotate(45deg);" height="25" width="25" alt="photo icon" />
+            
+          </a>
+       
+        </li>
+        <li class="nav-item main-item d-inline-block p-1">
+          
+          <a href="javascript:void(0);" data-type="pdf"  class="nav-link file-link text-decoration-none text-dark">
+            <img src="img/file-icons/pdf.png" style="transform: rotate(45deg);" height="25" width="25" alt="pdf icon" />
+            
+          </a>
+        </li>
+        <li class="nav-item main-item d-inline-block p-1">
+         
+          <a href="javascript:void(0);" data-type="doc"  class="nav-link file-link text-decoration-none text-dark">
+            <img src="img/file-icons/docx.png" style="transform: rotate(45deg);" height="25" width="25" alt="document icon" />
+          
+          </a>
+        </li>
+        <li class="nav-item main-item d-inline-block p-1">
+         
+          <a href="javascript:void(0);" data-type="xls"  class="nav-link file-link text-decoration-none text-dark">
+            <img src="img/file-icons/xlsx.png" style="transform: rotate(45deg);" height="25" width="25" alt="document icon" />
+          
+          </a>
+        </li>
+        <li class="nav-item  d-inline-block p-1">
+          
+          <a href="javascript:void(0);" onclick="resetFilters()" class="nav-link text-decoration-none text-dark">
+            <img src="img/file-icons/reset.png" style="transform: rotate(45deg);" height="25" width="25" alt="document icon" />
+          
+          </a>
+        </li>
+      </ul>
+    </div> -->
+
+
+  </div>
+<!-- /#main -->
+
+
+
+
+
+
+
+
+
+</body>
+<script src="bootstrap/js/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="slick-1.8.1/slick/slick.min.js"></script>
+<script src="slick-1.8.1/slick/slick.js"></script>
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+<script src="js/home.js"></script>
+<script src="node_modules/viewerjs/dist/viewer.js"></script>
+<script src="js/accre.js"></script>
+<!-- <script src="js/users.js"></script> -->
+<!-- <script src="js/modals.js"></script> -->
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accreditation Portal</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- header banner -->
+    <div class="container-fluid bg-psu py-2 px-0">
+        <div class="container">
+            <div class="d-flex flex-row justify-content-end bd-highlight">
+              <!-- <div class="p-2 bd-highlight top-bar-item">
+                <a href="/psub" class="text-dark text-decoration-none">
+                  <img src="img/psu-logo.png" class="me-2" height="30" width="30" alt="">PSU-Bataraza
+                </a>
+              </div> -->
+                <div class="p-2 bd-highlight top-bar-item">   
+                    <img src="img/icons/mail.png" height="20" width="20" alt="fb icon" class="me-2">batarazapsu@gmail.com
+                </div>
+                <div class="p-2 bd-highlight top-bar-item">
+                    <img src="img/icons/telephone.png" height="20" width="20" alt="fb icon" class="me-2">(+63) 920 902 0291
+                </div>
+                <div class="p-2 bd-highlight top-bar-item log-link">
+                  <a href="login" class="text-dark text-decoration-none"><img src="img/profile-removebg-preview.png" height="20" width="20" alt="fb icon" class="me-2">Login</a>
+                </div>
+
+                <div class="p-2 bd-highlight top-bar-item log-link d-none">
+                  <a href="javascript:void(0);" onClick="logout()" class="text-dark text-decoration-none"><img src="img/logout.png" height="20" width="20" alt="fb icon" class="me-2">Logout</a>
+                </div>
+               
+               
+             
+               
+            </div>
+
+        </div>
+      </div>
+       <!-- <div class="container-fluid position-relative p-4" id="jumbotron">
+       
+        
+       </div> -->
+
+       <div class="position-relative w-100">
+        <!-- <div class="position-absolute w-100 h-100 bg-secondary top-0 start-0" id="b-we"></div> -->
+         <div class="position-absolute w-50 top-0 end-0 text-end p-4" style="z-index: 10;">
+          <img src="img/logo-2.jpg" id="banner-logo" class="rounded-circle" alt="">
+        </div>
+       
+         <div class="slicker" style="z-index: 1;">
+          <div><img src="img/carousel/front-1.jpg" class="w-100"></div>
+          <div><img src="img/scene/officials.jpg" class="w-100"></div>
+          <div><img src="img/scene/conference.jpg" class="w-100"></div>
+          <div><img src="img/scene/grad-pic.jpg" class="w-100"></div>
+         </div>
+         <div class="position-absolute text-light px-4 jumbotron-text d-none d-sm-block" style="z-index: 10;">
+          <p class="display-1">PSU-Bataraza</p>
+          
+        </div>
+       </div>
+       <div class="col-12 col-sm-8 offset-sm-2 my-3 text-center">
+        <p class="lead lh-base"><span><img src="img/quote.png" class="me-2" width="30" height="30"  alt="quotation mark"></span> An internationally recognized university that provides relevant and innovative education and research for lifelong learning and sustainable development.</p>
+       </div>
+       <nav class="navbar navbar-expand-lg navbar-light bg-orange">
+        <div class="container">
+          <a class="navbar-brand" href="/psub"><img src="img/psu-logo.png"  height="30" width="30" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item me-2">
+                <a class="nav-link active" aria-current="page" href="/psub">Home<img src="img/icons/home.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons"></a>
+              </li>
+
+              <li class="nav-item me-2 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Accreditation<img src="img/icons/document.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons">
+                </a>
+                <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                
+                  <li><a class="dropdown-item" href="/psub/accreditation.html?dept=1">Bachelor of Science in Information Technology <img src="img/icons/chip.svg" height="25" width="25" class="ms-1 p-1 rounded-circle svg-icons"></a></li>
+                  <li><a class="dropdown-item" href="/psub/accreditation.html?dept=2">Bachelor of Elementary Education<img src="img/icons/education.svg" height="25" width="25" class="ms-1 p-1 rounded-circle svg-icons"> </a></li>
+                  <li><a class="dropdown-item" href="/psub/accreditation.html?dept=3">Bachelor of Science in Business Administration<img src="img/icons/business.svg" height="25" width="25" class="ms-1 p-1 rounded-circle svg-icons"></a></li>
+                  <li><a class="dropdown-item" href="/psub/accreditation.html?dept=4">Bachelor of Science in Agriculture<img src="img/icons/agriculture.svg" height="25" width="25" class="ms-1 p-1 rounded-circle svg-icons"></a></li>
+                </ul>
+              </li>
+              <!-- <li class="nav-item me-2">
+                <a class="nav-link" href="/psub/accreditation.html">Accreditation<img src="img/icons/document.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons"></a>
+              </li> -->
+             
+              <li class="nav-item me-2 admin-links d-none" id="docLink">
+                <a class="nav-link" href="/psub/documents.html">Upload<img src="img/icons/upload.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons"></a>
+              </li>
+              <li class="nav-item me-2 admin-links d-none"  id="userLink">
+                <a class="nav-link" href="/psub/users.html">Users<img src="img/icons/group.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons"></a>
+              </li>
+             
+             
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+
+
+      <!-- <div class="position-fixed side-menu end-0 top-0">
+
+      </div> -->
+
+      <div class="container-sm my-5 text-center" id="vision-mission">
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <img data-src="img/home/vision.png" class="lazy" id="vision"  alt="vision statement">
+            
+          </div>
+          <div class="col-12 col-sm-6">
+            <img data-src="img/home/mission.png" class="lazy" id="mission"  alt="mission statement">
+
+          </div>
+        </div>
+ 
+      </div>
+      
+  
+
+   
+          
+   <div class="container border-bottom border-top border-dark py-5">
+    <div class="row">
+      <div class="col-12 col-sm-6 order-1 order-sm-2">
+        <section class="text-center text-sm-start">
+          <p class="display-3 text-center">CORE VALUES</p>
+          <p class="lead fs-2"><b>E</b>  <small> - excellence in service</small></p>
+          <p class="lead fs-2"><b>Q</b> <small> - quality assurance</small></p>
+          <p class="lead fs-2"><b>U</b> <small> - unity in diversity</small></p>
+          <p class="lead fs-2"><b>A</b> <small> - advocacy for sustainable development</small></p>
+          <p class="lead fs-2"><b>L</b> <small> - leadership by example</small></p>
+          <p class="lead fs-2"><b>I</b> <small> - innovation</small></p>
+          <p class="lead fs-2"><b>T</b> <small> - transparency</small></p>
+          <p class="lead fs-2"><b>Y</b> <small> - youth empowerment</small></p>
+      
+        </section>
+        <!-- <img src="img/core-values.jpg" class="w-75 mx-aut rounded" alt="abbreviated word"> -->
+      </div>
+      <div class="col-12 col-sm-6 pt-5 pt-sm-3 order-2 order-sm-1">
+        <div class="box-carousel mx-auto">
+          <div class="slick-item">
+            <img src="img/carousel/front1.jpg"  alt="psu-front-view">
+          </div>
+          <div class="slick-item">
+            <img src="img/scene/group-pic.jpg"  alt="psu-front-view">
+          </div>
+          <div class="slick-item">
+            <img src="img/scene/parade-pic.jpg"  alt="psu-front-view">
+          </div>
+          <div class="slick-item">
+            <img src="img/scene/group-pic-3.jpg"  alt="psu-front-view">
+          </div>
+          <div class="slick-item">
+            <img src="img/scene/grad-pic.jpg"  alt="psu-front-view">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+       
+    
+      </div>
+
+
+      <div class="container-fluid my-5 py-3 service-section">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-12 col-md-6 text-white">
+              <h1>Service Pledge</h1>
+              <p class="lead">
+                “The Palawan State University is geared towards serving its stakeholders in the most honest, professional, decent, efficient and transparent means and shall always be concerned about their welfare and development as citizens of this nation.”
+              </p>
+            </div>
+            <div class="col-12 col-md-6"><img src="" data-src="img/service.webp" class="img-fluid lazy rounded" alt=""></div>
+          </div>
+        </div>
+        
+       </div>
+     
+
+
+      <div class="container my-5 border-top border-dark" id="contact">
+        <p class="text-center display-3 mb-3">Contact Us</p>
+     
+        <div class="row justify-content-center">
+       
+          <div class="col-12 col-sm-4 p-1 p-sm-3 text-center text-sm-start">
+            <img src="" data-src="img/contact-email.png" class="img-fluid rounded lazy" alt="">
+            <!-- <section>
+              <img src="img/icons/mail.png" width="40" height="40" alt="mail icon">
+              <p>batarazapsu@gmail.com</p>
+            </section> -->
+          </div>
+          <div class="col-12 col-sm-4 p-1 p-sm-3 text-center text-sm-start">
+            <img src="" data-src="img/contact-address.png" class="img-fluid rounded lazy" alt="">
+            <!-- <section>
+              <img src="img/icons/location.png" width="50" height="40" alt="pin location">
+              <address>
+                P.S. Chan Memorial Campus<br>
+                Inogbong, Bataraza <br>
+                Palawan 5306
+              </address>
+            </section> -->
+          </div>
+          <div class="col-12 col-sm-4 p-1 p-sm-3 text-center text-sm-start">
+            <img src="" data-src="img/contact-phone.webp" class="img-fluid rounded lazy" alt="">
+            <!-- <section>
+              <img src="img/icons/telephone.png" width="40" height="40" alt="phone icon">
+              <p>(+63) 920 902 0291</p>
+            </section> -->
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="container mt-3 border-top border-dark pt-3 text-center">
+        <p class="lead">
+          <span><img src="img/quote.png" class="me-2" width="30" height="30"  alt="quotation mark"></span> The Palawan State University is committed to upgrade the quality of life of the people by providing higher education opportunities through excellent instruction, research, extension, production services and transnational collaboration and innovations.
+        </p>
+      </div>
+    <!-- footer -->
+    <div class="container-fluid bg-psu py-2 mt-4">
+      <p class="footer">&copy; Palawan State University</p>
+     
+        <!-- <a href="https://www.flaticon.com/free-icons/mail" class="text-dark text-decoration-none" title="mail icons">Mail icons created by Freepik - Flaticon</a> -->
+    </div>
+</body>
+<script src="bootstrap/js/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="jquery-lazy/jquery.lazy.min.js"></script>
+<script src="slick-1.8.1/slick/slick.min.js"></script>
+<script src="slick-1.8.1/slick/slick.js"></script>
+<script src="js/home.js"></script>
+</html>

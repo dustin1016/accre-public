@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accreditation Dashboard</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+</head>
+<body>
+   <!-- Navigation -->
+   <!-- <nav class="navbar navbar-expand-lg navbar-light border-bottom border-2">
+    <div class="container ">
+      <a class="navbar-brand fs-2 text-light mb-3" href="home"><img src="img/psu-logo.png" height="80" width="80" alt="smiley"></a>
+      <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mb-3">
+            <a class="navi-link px-1" data-div="files" onclick="contentPop()" aria-current="page" href="#">Documents</a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="navi-link px-1" data-div="users" onclick="getUsers()" href="#">Users</a>
+          </li>
+        
+        
+          
+        </ul>
+        <div class="w-100 text-end clearfix">
+
+          <a href="#" role="button" type="button" class="btn btn-link text-dark text-decoration-none"><img src="img/profile-removebg-preview.png" alt="profile logo" height="30" width="30"> <span id="logged-user"></span></a>
+          <a href="#" role="button" type="button" class="btn btn-link text-dark text-decoration-none" onclick="logout()">Log Out <img src="img/logout.png" alt="logout" height="30" width="30"></a>
+        </div>
+       
+      </div>
+    </div>
+  </nav> -->
+
+   <!-- header banner -->
+   <div class="container-fluid bg-psu py-2 px-0">
+    <div class="container">
+        <div class="d-flex flex-row justify-content-end bd-highlight">
+          <!-- <div class="p-2 bd-highlight top-bar-item">
+            <a href="/psub" class="text-dark text-decoration-none">
+              <img src="img/psu-logo.png" class="me-2" height="30" width="30" alt="">PSU-Bataraza
+            </a>
+          </div> -->
+          <div class="p-2 bd-highlight top-bar-item">   
+            <img src="img/icons/mail.png" height="20" width="20" alt="fb icon" class="me-2">batarazapsu@gmail.com
+        </div>
+        <div class="p-2 bd-highlight top-bar-item">
+            <img src="img/icons/telephone.png" height="20" width="20" alt="fb icon" class="me-2">(+63) 920 902 0291
+        </div>
+        <div class="p-2 bd-highlight top-bar-item log-link">
+          <a href="login" class="text-dark text-decoration-none"><img src="img/profile-removebg-preview.png" height="20" width="20" alt="fb icon" class="me-2">Login</a>
+        </div>
+
+        <div class="p-2 bd-highlight top-bar-item log-link d-none">
+          <a href="javascript:void(0);" onClick="logout()" class="text-dark text-decoration-none"><img src="img/logout.png" height="20" width="20" alt="fb icon" class="me-2">Logout</a>
+        </div>
+           
+           
+         
+           
+        </div>
+
+    </div>
+  </div>
+  <div class="position-relative w-100">
+    <div class="position-absolute w-50 top-0 end-0 text-end p-4" style="z-index: 10;">
+     <img src="img/logo-2.jpg" id="banner-logo" class="rounded-circle" alt="">
+   </div>
+  
+    <div class="slicker" style="z-index: 1;">
+     <div><img src="img/carousel/front-1.jpg" class="w-100"></div>
+     <div><img src="img/scene/officials.jpg" class="w-100"></div>
+     <div><img src="img/scene/conference.jpg" class="w-100"></div>
+     <div><img src="img/scene/grad-pic.jpg" class="w-100"></div>
+    </div>
+    <div class="position-absolute text-light px-4 jumbotron-text d-none d-sm-block" style="z-index: 10;">
+     <p class="display-1">PSU-Bataraza</p>
+     <p class="lead">An internationally recognized university that provides relevant and innovative education and research for lifelong learning and sustainable development.</p>
+   </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-orange">
+    <div class="container">
+      <a class="navbar-brand" href="/psub"><img src="img/psu-logo.png"  height="30" width="30" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item me-2">
+            <a class="nav-link " aria-current="page" href="/psub">Home<img src="img/icons/home.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons"></a>
+          </li>
+
+          <li class="nav-item me-2 dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Accreditation<img src="img/icons/document.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons">
+            </a>
+            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+            
+              <li><a class="dropdown-item" href="/psub/accreditation.html?dept=1">Bachelor of Science in Information Technology <img src="img/icons/chip.svg" height="25" width="25" class="ms-1 p-1 rounded-circle svg-icons"></a></li>
+              <li><a class="dropdown-item" href="/psub/accreditation.html?dept=2">Bachelor of Elementary Education<img src="img/icons/education.svg" height="25" width="25" class="ms-1 p-1 rounded-circle svg-icons"> </a></li>
+              <li><a class="dropdown-item" href="/psub/accreditation.html?dept=3">Bachelor of Science in Business Administration<img src="img/icons/business.svg" height="25" width="25" class="ms-1 p-1 rounded-circle svg-icons"></a></li>
+              <li><a class="dropdown-item" href="/psub/accreditation.html?dept=4">Bachelor of Science in Agriculture<img src="img/icons/agriculture.svg" height="25" width="25" class="ms-1 p-1 rounded-circle svg-icons"></a></li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item me-2">
+            <a class="nav-link active" href="/psub/accreditation.html">Accreditation<img src="img/icons/document.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons"></a>
+          </li> -->
+         
+          <li class="nav-item me-2 admin-links d-none" id="docLink">
+            <a class="nav-link" href="/psub/documents.html">Upload<img src="img/icons/upload.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons"></a>
+          </li>
+          <li class="nav-item me-2 admin-links d-none"  id="userLink">
+            <a class="nav-link" href="/psub/users.html">Users<img src="img/icons/group.svg" height="30" width="30" class="ms-1 p-1 rounded-circle svg-icons"></a>
+          </li>
+         
+         
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+<div class="container-fluid" id="maincontainer">
+
+
+<div class="container pt-4 min-vh-100" id="main">
+    <div class="mb-3">
+      <!-- <label for="" class="form-label">Select Department</label>
+      <select class="form-select form-select-sm" name="dept" id="dept">
+        
+        <option value="1" selected>Bachelor of Science in Information Technology</option>
+        <option value="2">Bachelor of Elementary Education</option>
+        <option value="3">Bachelor of Science in Business Administration</option>
+        <option value="4">Bachelor of Science in Agriculture</option>
+      </select> -->
+      <h4><span class="dept-context"></span> <span><img src="" class="ms-2" height="50" width="50" id="deptImage" alt=""></span></h4>
+    </div>
+
+    <!-- Files -->
+    <div class="db-section active" id="files">
+      <!-- <div class="clearfix mb-4 border-bottom border-2">
+        <h4 class="fw-light float-start">Documents</h4>
+        <div class="float-end">
+          <a href="#"  class="btn btn-outline-primary  me-3" data-bs-toggle="modal" data-bs-target="#dirModal">Folder &#10010;</a>
+          <button  class="btn btn-outline-primary d-none" id="btnFile" name="btnFile" data-bs-toggle="modal" data-bs-target="#fileModal">File &#10010;</button>
+
+        </div>
+        
+      </div> -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" id="breadcrumbs">
+          <li class="breadcrumb-item active" aria-current="page"></li>
+        </ol>
+      </nav>
+
+      <button class="btn btn-link invisible mb-1" id="backButton">&larr; Go Back</button>
+      <p class="lead fetch-status">Fetching data...</p>
+       <table class="table w-100" id="files-table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Areas</th>
+        
+            
+  
+          </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+       </table>
+       
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- dir Modal -->
+<div class="modal fade ac-modal" id="dirModal" tabindex="-1" aria-labelledby="dirModalLable" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="dirModalLable">Creating New Folder Under directory: <span class="fw-bold text-success active-dir"></span></h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="dirForm">
+          <p class="text-center text-danger dir-error"></p>
+          <p class="text-center text-success dir-success"></p>
+          <div class="mb-3">
+            <label for="" class="form-label">Enter Directory Name</label>
+            <input type="text" class="form-control" name="dirName" id="dirName" aria-describedby="helpId" placeholder="e.g. accreditation folder 1"> 
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="btn-saveDir" onclick="saveDir()">Save New Folder</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- file Modal -->
+<div class="modal fade ac-modal" id="fileModal" tabindex="-1" aria-labelledby="fileModalLable" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="fileModalLable">Uploading New File Under: 
+          <span class="fw-bold text-success active-dept"></span><br>
+      
+          <span class="fw-bold text-success active-dir"></span><br>
+        </h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="fileForm">
+          <p class="text-center text-danger file-error file-stat"></p>
+          <p class="text-center text-success file-success file-stat"></p>
+            <!-- <div class="mb-3">
+              <label for="accFileName" class="form-label">Enter Accreditation File Name</label>
+              <input type="text" class="form-control" name="accFileName" id="accFileName" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">e.g. Vision & Mission Document</small>
+            </div> -->
+            <div class="mb-3">
+              <label for="accFile" class="form-label">Select File</label>
+              <input type="file" class="form-control" name="accFile" id="accFile" placeholder="" aria-describedby="fileHelpId">
+              <div id="fileHelpId" class="form-text">.docx, .xlsx, .png .jpg, .pdf</div>
+            </div>
+      
+          <!-- <div class="mb-3">
+            <label for="accArea" class="form-label">Accreditation Area</label>
+            <select class="form-control" name="accArea" id="accArea">
+              <option selected disabled>--Select Area--</option>
+              <option value="1">Vision & Mission, Goals & Objectives</option>
+              <option value="2">Faculty</option>
+              <option value="3">Curriculum</option>
+              <option value="4">Supports to student</option>
+              <option value="5">Research</option>
+              <option value="6">Extension</option>
+              <option value="7">Library</option>
+              <option value="8">Physical Plants Facilities</option>
+              <option value="9">Laboratories</option>
+              <option value="10">Administration</option>              
+            </select>
+          </div> -->
+
+          <div class="mb-3">
+            <label for="accDesc" class="form-label">Enter File Description</label>
+            <textarea class="form-control" name="accDesc" id="accDesc" placeholder="Enter File Description Here" aria-describedby="fileHelpId1"> </textarea>
+            <!-- <div id="fileHelpId1" class="form-text">Enter File Desc</div> -->
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="btn-saveDir" onclick="saveFile()">Save New Folder</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- fileEdit modal -->
+
+<div class="modal fade ac-modal" id="editFileModal" tabindex="-1" aria-labelledby="fileModalLable" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="fileModalLable">Editing File: <span class="fw-bold text-success file-edit"></span></h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="fileEditForm">
+          <input type="hidden" name="editFileIndex" id="editFileIndex">
+          <input type="hidden" name="oldFileName" id="oldFileName">
+          <input type="hidden" name="oldAccArea" id="oldAccArea">
+          <input type="hidden" name="editFileExt" id="editFileExt">
+          <p class="text-center text-danger file-error file-stat"></p>
+          <p class="text-center text-success file-success file-stat"></p>
+            <!-- <div class="mb-3">
+              <label for="accFileName" class="form-label">Enter Accreditation File Name</label>
+              <input type="text" class="form-control" name="accFileName" id="accFileName" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">e.g. Vision & Mission Document</small>
+            </div> -->
+            <div class="mb-3">
+              <label for="editFileName" class="form-label">File Name:</label>
+              <input type="text" class="form-control" name="editFileName" id="editFileName" placeholder="">
+              
+            </div>
+      
+          <div class="mb-3">
+            <label for="editAccArea" class="form-label">Accreditation Area</label>
+            <select class="form-control" name="editAccArea" id="editAccArea">
+              <option selected disabled>--Select Area--</option>
+              <option value="1">Vision & Mission, Goals & Objectives</option>
+              <option value="2">Faculty</option>
+              <option value="3">Curriculum</option>
+              <option value="4">Supports to student</option>
+              <option value="5">Research</option>
+              <option value="6">Extension</option>
+              <option value="7">Library</option>
+              <option value="8">Physical Plants Facilities</option>
+              <option value="9">Laboratories</option>
+              <option value="10">Administration</option>              
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="editFileDesc" class="form-label">File Description:</label>
+            <textarea class="form-control" name="editFileDesc" id="editFileDesc" placeholder="Enter File Description Here"> </textarea>       
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="btn-saveDir" onclick="saveFileEdit()">Save New Folder</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<div class="container-fluid bg-psu py-2">
+  <p class="footer">&copy; Palawan State University</p>
+    <!-- <a href="https://www.flaticon.com/free-icons/mail" class="text-dark text-decoration-none" title="mail icons">Mail icons created by Freepik - Flaticon</a> -->
+</div>
+</body>
+<script src="bootstrap/js/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="slick-1.8.1/slick/slick.min.js"></script>
+<script src="slick-1.8.1/slick/slick.js"></script>
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+<script src="js/directories.js"></script>
+<script src="js/home.js"></script>
+<script src="js/documents-2.js"></script>
+<script src="js/modals.js"></script>
+</html>

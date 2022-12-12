@@ -1,0 +1,150 @@
+.db-section {
+    display: none;
+}
+
+.db-section.active {
+    display: block;
+    transition: display 0.3s fade-in;
+   
+}
+
+.db-section.loading {
+    display: block;
+    transition: display 0.3s fade-in;
+    background-image: url('../img/_21_loading-gif-transparent-background_ManageWP-Loader-by-Milica-Spasojevic-for-GoDaddy-on-Dribbble.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 0%;
+}
+
+
+
+
+.navi-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.navi-link.active {
+    color: #0a58ca;
+}
+
+.breadcrumb-item:not(active) {
+   cursor: pointer;
+}
+
+.breadcrumb-item:not(:active):hover {
+    color: #0a58ca;
+    text-decoration: underline;
+ }
+
+.dir-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.dir-link:hover {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.file-section {
+    overflow-y: scroll;
+}
+
+.bg-black {
+    background-color: #000;
+}
+
+.vh-90 {
+    min-height: 90vh;
+}
+
+.vh-80 {
+    min-height: 80vh;
+}
+
+.bg-accre-main {
+    background-image: linear-gradient(to left, #fe6f31, #b85327,#343a40, #212529,#000, #000);
+}
+
+.file-link {
+    border: none;
+    font-size: 14px;
+    transition: all 0.1s;
+    padding: 8px;
+}
+
+.file-link:hover, .file-link.active{
+    border: 1px solid #000;
+    border-radius: 4px;
+    transform: scale(1.1);
+    font-weight: 700;
+}
+
+.file-link.active{
+    border: 1px solid #fe6f31;
+}
+
+
+.file-link.active a{
+   font-weight: 700;
+}
+.file-col {
+    opacity: 0;
+    cursor: pointer;
+    display: inline-flex;
+    
+}
+
+.file-col.shown {
+    opacity: 1;
+    transition: all 0.4s;
+}
+
+.file-col.active {
+    box-shadow: 0 0 10px #fe6f31;
+}
+
+
+.col-icon {
+    position: absolute;
+    top: 0rem;
+    left: -2rem;
+}
+
+#files-table_filter {
+    margin-top: 1.25rem;
+}
+
+#files-table > tbody {
+    font-size: 12px;
+}
+
+.file-name {
+    font-size: 1rem;
+}
+
+.user-error {
+    font-size: 12px;
+}
+
+@media (max-width: 575.98px){
+    #files-table > tbody {
+        font-size: 14px;
+    }
+
+    .file-name {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 991.98px){
+    .file-link a {
+        font-size: 12px;
+    }
+}

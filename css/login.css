@@ -1,0 +1,60 @@
+body {
+   background-color: #495057;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/pineapple-stock.jpg');
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+}
+
+.glass {
+    background-color: rgba(33, 37, 41, 0.6);
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btn-psu {
+    background-color: #fe6f31;
+}
+
+.form-control::-webkit-input-placeholder { /* Edge */
+    color: #ced4da;
+  }
+  .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ced4da;
+    opacity: 1;
+    }
+    
+    .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #ced4da;
+       
+    }
+    
+    .form-control::-ms-input-placeholder { /* Microsoft Edge */
+        color: #ced4da;
+    }
+.form-mode {
+    color: #adb5bd;
+    cursor: pointer;
+}
+
+.form-mode.active {
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid red;
+}
+
+@media screen and (max-width: 575.98px) {
+ 
+
+    body {
+        background-size: 300%;
+  
+        background-position: center center;
+    }
+
+}
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- <script src="https://kit.fontawesome.com/63ea794447.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="p-4">
+    <div class="glass mx-auto d-block mt-2 shadow p-4 rounded col-12 col-sm-8 offset-sm-2 col-md-6 offset md-3 col-lg-4 offset-lg-4">
+        <div class="login-form bg-transparent px-2 px-lg-3">
+            <section class="mb-3">
+                
+                <h4 class="text-center text-light">PSU-Bataraza<br>Accreditation Website</h4>
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2 bd-highlight form-mode active" onclick="toggleSection()">Login</div>
+                    <div class="p-2 bd-highlight form-mode" onclick="toggleSection()">Forgot Password</div>
+                    
+                  </div>
+            </section>
+            <form id="login-form" class="login-section">
+                
+                <div class="text-center text-danger invisible" id="invalid-login">
+                    Incorrect Username/Password
+                </div>
+            
+                <div class="mb-3">
+                    <label class="text-light" for="username">Username</label>
+                    <input type="text" class="form-control form-control-sm bg-transparent text-light border-bottom border-top-0 border-end-0 border-start-0" id="username" placeholder="Your Username">
+                    <div class="text-center text-danger invisible" id="user-blank">
+                        This field is required
+                    </div>
+                </div>
+                <label  class="text-light" for="password">Password</label>
+                <div class="input-group ">
+                    <input type="password" class="form-control form-control-sm bg-transparent border-bottom border-top-0 border-end-0 border-start-0 text-light" aria-describedby="basic-addon2" id="password" placeholder="Password">
+                    <span class="input-group-text bg-transparent border-bottom border-top-0 border-end-0 border-start-0 text-light fs-6" id="showpw" id="basic-addon2" style="cursor: pointer;">show</span> 
+                </div>
+                <div class="text-center text-danger invisible mb-3" id="pw-blank">
+                    This field is required
+                </div>
+                <div class="row align-items-center mb-3">
+                    <div class="col-6 align-items-center">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label text-light" for="flexCheckDefault">
+                            Remember me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-6 align-items-center">
+                        <a href="#" onclick="toggleSection()" class="text-decoration-none text-light fs-6">Forgot Password</a>
+                    </div>
+                 </div>
+                   
+                    <div class="d-grid">
+                        <button type="button" id="login" class="btn btn-psu">
+                            Submit
+                        </button>
+                    </div>
+            </form>
+
+            <div id="forgot " class="login-section d-none">
+                <div class="mb-3">
+                    <label class="text-light" for="forgot-email">Enter your Email: </label>
+                    <input type="text" class="form-control form-control-sm bg-transparent text-light border-bottom border-top-0 border-end-0 border-start-0" id="forgot-email" name="forgot-email" placeholder="user@example.com">
+                    <div class="text-center text-danger invisible" id="email-blank">
+                        
+                    </div>
+                </div>
+
+                <div id="reset-message" class="mb-3 text-white">
+
+                </div>
+
+                <div class="d-grid">
+                    <button type="button" id="sendForgot" class="btn btn-psu">
+                        Reset Password
+                    </button>
+                </div>
+            </div>
+       
+        
+        </div>
+    </div>
+</body>
+<script src="bootstrap/js/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/login.js"></script>
+</html>
