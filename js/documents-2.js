@@ -231,7 +231,7 @@ function clearDir(){
             var fileLink = `https://ac3-890ddq.s3.ap-southeast-1.amazonaws.com/documents/d-${val.dept_id}/t-${val.tier_id}/p-${val.parent_dir}/${val.file_name}`;
             switch(ext.toLowerCase()){
                 case "pdf":
-                    proc = `<td><a class="dir-link" onClick="openF('${fileLink}')"  href="javascript:void(0);"><img src="img/file-icons/${ext}.png" class="me-2" alt="." height="30" width="30">'${val.file_name}</a></td>`;
+                    proc = `<td><a class="dir-link" onClick="openDoc('${fileLink}', '${val.file_name}')" data-bs-toggle="modal" data-bs-target="#docModal"  href="javascript:void(0);"><img src="img/file-icons/${ext}.png" class="me-2" alt="." height="30" width="30">'${val.file_name}</a></td>`;
                     break;
                 case "jpg":
                     case "jpeg":

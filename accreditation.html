@@ -222,6 +222,7 @@
 </div>
 
 
+
 <!-- file Modal -->
 <div class="modal fade ac-modal" id="fileModal" tabindex="-1" aria-labelledby="fileModalLable" aria-hidden="true">
   <div class="modal-dialog">
@@ -283,64 +284,47 @@
 
 
 
-<!-- fileEdit modal -->
+<!-- image modal -->
 
-<div class="modal fade ac-modal" id="editFileModal" tabindex="-1" aria-labelledby="fileModalLable" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade ac-modal" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="fileModalLable">Editing File: <span class="fw-bold text-success file-edit"></span></h6>
+        <h6 class="modal-title" id="imgModalLabel"><span class="fw-bold text-success file-edit" id="imgName"></span></h6>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <form id="fileEditForm">
-          <input type="hidden" name="editFileIndex" id="editFileIndex">
-          <input type="hidden" name="oldFileName" id="oldFileName">
-          <input type="hidden" name="oldAccArea" id="oldAccArea">
-          <input type="hidden" name="editFileExt" id="editFileExt">
-          <p class="text-center text-danger file-error file-stat"></p>
-          <p class="text-center text-success file-success file-stat"></p>
-            <!-- <div class="mb-3">
-              <label for="accFileName" class="form-label">Enter Accreditation File Name</label>
-              <input type="text" class="form-control" name="accFileName" id="accFileName" aria-describedby="helpId" placeholder="">
-              <small id="helpId" class="form-text text-muted">e.g. Vision & Mission Document</small>
-            </div> -->
-            <div class="mb-3">
-              <label for="editFileName" class="form-label">File Name:</label>
-              <input type="text" class="form-control" name="editFileName" id="editFileName" placeholder="">
-              
-            </div>
-      
-          <div class="mb-3">
-            <label for="editAccArea" class="form-label">Accreditation Area</label>
-            <select class="form-control" name="editAccArea" id="editAccArea">
-              <option selected disabled>--Select Area--</option>
-              <option value="1">Vision & Mission, Goals & Objectives</option>
-              <option value="2">Faculty</option>
-              <option value="3">Curriculum</option>
-              <option value="4">Supports to student</option>
-              <option value="5">Research</option>
-              <option value="6">Extension</option>
-              <option value="7">Library</option>
-              <option value="8">Physical Plants Facilities</option>
-              <option value="9">Laboratories</option>
-              <option value="10">Administration</option>              
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="editFileDesc" class="form-label">File Description:</label>
-            <textarea class="form-control" name="editFileDesc" id="editFileDesc" placeholder="Enter File Description Here"> </textarea>       
-          </div>
-        </form>
+      <div class="modal-body text-center">
+       <img src="" alt="..." class="img-fluid" id="accreImg">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="btn-saveDir" onclick="saveFileEdit()">Save New Folder</button>
+       
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="modal fade ac-modal" id="docModal" tabindex="-1" aria-labelledby="docModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="docModalLabel"><span class="fw-bold text-success file-edit" id="docName"></span></h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <iframe src="" id="docFrame" style="width: 100%; height: 70vh;"></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <!-- footer -->
 <div class="container-fluid bg-psu py-2">
@@ -356,5 +340,5 @@
 <script src="js/directories.js"></script>
 <script src="js/home.js"></script>
 <script src="js/documents-2.js"></script>
-<script src="js/modals.js"></script>
+<script src="js/modals-2.js"></script>
 </html>

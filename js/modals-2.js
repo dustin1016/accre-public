@@ -46,24 +46,27 @@ fileModal.addEventListener('shown.bs.modal', function (event) {
 })
 
 
-    const editFileModal = document.getElementById('editFileModal')
-editFileModal.addEventListener('shown.bs.modal', function (event) {
-
-    console.log('..');
-})
-
-
-const docModal = document.getElementById('docModal')
-docModal.addEventListener('shown.bs.modal', function (event) {
-  console.log(docLink)
-    if (docLink !== undefined || docLink !== null){
-        $("#docFrame").attr("src",docLink);
-       }
-})
 
 
 
 
+    const imgModal = document.getElementById('imgModal')
+    imgModal.addEventListener('shown.bs.modal', function (event) {
+        console.log(imageLink);
+        if (imageLink !== undefined || imageLink !== null){
+            $("#accreImg").attr("src",imageLink);
+           }
+    })
+
+
+
+    const docModal = document.getElementById('docModal')
+    docModal.addEventListener('shown.bs.modal', function (event) {
+      console.log(docLink)
+        if (docLink !== undefined || docLink !== null){
+            $("#docFrame").attr("src",docLink);
+           }
+    })
 
 
 

@@ -293,7 +293,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="btn-saveDir" onclick="saveFile()">Save New Folder</button>
+        <button type="button" class="btn btn-primary" id="btn-saveDir" onclick="saveFile()">Save New File</button>
       </div>
     </div>
   </div>
@@ -354,6 +354,25 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="btn-saveDir" onclick="saveFileEdit()">Save New Folder</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade ac-modal" id="docModal" tabindex="-1" aria-labelledby="docModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="docModalLabel"><span class="fw-bold text-success file-edit" id="docName"></span></h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <iframe src="" id="docFrame" style="width: 100%; height: 70vh;"></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       
       </div>
     </div>
   </div>
