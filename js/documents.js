@@ -237,16 +237,40 @@ function clearDir(){
             // var area = accreAreas.find(x=>x.id===val.accre_area).accre_name;
             var ext = val.file_ext;
            var dept = $("#dept").val();
-            var ref = (ext === "pdf") ? "ViewerJS/#../" : "";
+            
+            var proc;
+            var fileLink = `https://ac3-890ddq.s3.ap-southeast-1.amazonaws.com/documents/d-${val.dept_id}/t-${val.tier_id}/p-${val.parent_dir}/${val.file_name}`;
+            switch(ext.toLowerCase()){
+                case "pdf":
+                    proc = `<td><a class="dir-link" onClick="openF('${fileLink}')"  href="javascript:void(0);"><img src="img/file-icons/${ext}.png" class="me-2" alt="." height="30" width="30">'${val.file_name}</a></td>`;
+                    break;
+                case "jpg":
+                    case "jpeg":
+                        case "png":
+                            case "webp":
+                                
+                            proc = `<td><a class="dir-link" onClick="setImg('${fileLink}', '${val.file_name}')" data-bs-toggle="modal" data-bs-target="#imgModal"  href="javascript:void(0);"><img src="img/file-icons/${ext}.png" class="me-2" alt="." height="30" width="30">'${val.file_name}</a></td>`;
+                            break;
+                case "doc":
+                    case "docx":
+                        case "xls":
+                            case "xlsx":
+                                case "txt":
+                                    proc = `<td><a class="dir-link" onClick="openDoc('${fileLink}', '${val.file_name}')" data-bs-toggle="modal" data-bs-target="#docModal"  href="javascript:void(0);"><img src="img/file-icons/${ext}.png" class="me-2" alt="." height="30" width="30">'${val.file_name}</a></td>`;
+                                    break;      
+                default: break;
+            }
+        
             $("#files-table > tbody").append(
                 '<tr>'+
-                    '<td><a class="dir-link"  href="'+ref+'https://ac3-890ddq.s3.ap-southeast-1.amazonaws.com/documents/d-'+val.dept_id+'/t-'+val.tier_id+'/p-'+val.parent_dir+'/'+val.file_name+'" target="_blank"><img src="img/file-icons/'+ext+'.png" class="me-2" alt="." height="30" width="30">'+ val.file_name +'</a></td>'+
-                    // '<td>'+ formatDate(val.created_at) +'</td>'+
+                    // '<td><a class="dir-link"  href="'+ref+'https://ac3-890ddq.s3.ap-southeast-1.amazonaws.com/documents/d-'+val.dept_id+'/t-'+val.tier_id+'/p-'+val.parent_dir+'/'+val.file_name+'" target="_blank"><img src="img/file-icons/'+ext+'.png" class="me-2" alt="." height="30" width="30">'+ val.file_name +'</a></td>'+
+                    // `<td><a class="dir-link" onClick="openF('${fileLink}')"  href="javascript:void(0);"><img src="img/file-icons/${ext}.png" class="me-2" alt="." height="30" width="30">'${val.file_name}</a></td>`+
+                    proc +// '<td>'+ formatDate(val.created_at) +'</td>'+
                     // '<td>'+ area +'</td>'+
-              
-                    `<td class="text-end d-flex"><button onClick="deleteFile(${val.file_idx}, ${val.accre_area})" class="btn btn-danger btn-sm mb-2 mb-md-0 me-2">&#10005;</button>`+
+                    '<td>&nbsp;</td>'+
+                    // `<td class="text-end d-flex"><button onClick="deleteFile(${val.file_idx}, ${val.accre_area})" class="btn btn-danger btn-sm mb-2 mb-md-0 me-2">&#10005;</button>`+
                     // `<button class="btn btn-primary btn-sm" onClick="openFileEdit(${val.file_idx}, ${val.accre_area}, '${val.file_desc}')" data-bs-toggle="modal" data-bs-target="#editFileModal">&#9998;</button>`+
-                    '</td>'+
+                    // '</td>'+
                     // `<button class="btn btn-primary btn-sm" onClick="openFileEdit(${val.file_idx}, ${val.accre_area}, '${val.file_desc}')" >&#9998;</button></td>`+
                    
                    
@@ -270,7 +294,20 @@ function clearDir(){
 
   }
 
+  function setImg(src, name){
+    imageLink = src;
+    $("#imgName").text(name);
+}
 
+function openDoc(src, name){
+    var link = `https://docs.google.com/gview?url=${src}&embedded=true`;
+    docLink = link;
+    $("#docName").text(name);
+  }
+
+  function openF(src){
+    window.open(src, '_blank');
+  }
 
 
   function navBreads(d){
