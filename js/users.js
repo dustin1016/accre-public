@@ -84,7 +84,34 @@ function formatDate(str){
 
 
 
-  
+  function deleteUser(userid){
+    if (confirm("are you sure you want to delete this user?")){
+        $.ajax({
+            type: 'POST',
+        
+            url: 'php/users.php',
+            data: {action:'delete', userid:userid},
+            crossDomain: true,
+            dataType: 'json',
+            success: function(data) {
+                alert(data.message);
+                if (data.result){
+                    //if deletion success -> delete user from users object
+                    users = users.filter(function( obj ) {
+                        return parseInt(obj.userid) !== parseInt(userid);
+                    });
+                }
+            }
+    
+        }).then((result) => {
+          
+            userPop();  
+        }).catch((err) => {
+            alert("something went wrong, please try again later")
+        });; //END AJAX
+    }
+    
+  }
 
 
   
@@ -126,7 +153,7 @@ function formatDate(str){
             '<tr>'+
                 '<td class="fs-2">'+ val.username+
                 '</td>'+
-                '<td class="text-center"><button type="button" class="btn btn-danger">Delete</button></td>'+
+                `<td class="text-center"><button type="button" onclick="deleteUser(${val.userid})" class="btn btn-danger">Delete</button></td>`+
                
             '</tr>'
         );

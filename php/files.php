@@ -100,8 +100,8 @@
               'region'  => 'ap-southeast-1',
               'version' => 'latest',
               'credentials' => [
-                  'key'    => "",
-                  'secret' => "",
+                  'key'    => "AKIAXFRJBWCUVVZRV5PM",
+                  'secret' => "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",
               ]
             ]);		
 
@@ -262,8 +262,8 @@
                     'region'  => 'us-east-1',
                     'version' => 'latest',
                     'credentials' => [
-                        'key'    => "",
-                        'secret' => "",
+                        'key'    => "AKIAXFRJBWCUVVZRV5PM",
+                        'secret' => "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",
                     ]
                 ]);		
             

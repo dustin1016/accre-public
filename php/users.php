@@ -21,9 +21,14 @@ switch($_POST['action']) {
             resetPassword();
             
             break;
+        case "delete":
+            deleteUser();
+            break;
     default:
      break;
 }
+
+
 
 function getUsers(){
     $conn = new mysqli(servername, dbuser, dbpw, dbname);
@@ -49,6 +54,24 @@ function getUsers(){
     echo json_encode(array("users"=>$users));
 
     $conn->close();
+}
+
+
+function deleteUser(){
+    $conn = mysqli_connect(servername, dbuser, dbpw, dbname);
+    $stmt = mysqli_prepare($conn, "DELETE FROM  `users_table` where userid = ?");
+    mysqli_stmt_bind_param(
+        $stmt,
+         'i',
+           $_POST['userid'],
+            );
+    $stmt->execute();
+    if ($stmt->affected_rows > 0){
+        echo json_encode(array("result"=>true, "message"=>"user deleted"));
+    } else {
+        echo json_encode(array("result"=>false, "message"=>"something went wrong please try again later"));
+    }
+    $stmt->close();
 }
 
 function hashPassword($password){
