@@ -267,7 +267,9 @@ function clearDir(){
                     // `<td><a class="dir-link" onClick="openF('${fileLink}')"  href="javascript:void(0);"><img src="img/file-icons/${ext}.png" class="me-2" alt="." height="30" width="30">'${val.file_name}</a></td>`+
                     proc +// '<td>'+ formatDate(val.created_at) +'</td>'+
                     // '<td>'+ area +'</td>'+
-                    '<td>&nbsp;</td>'+
+                    `<td class="text-end d-flex"><button onClick="deleteFile(${val.file_idx})" class="btn btn-danger btn-sm mb-2 mb-md-0 me-2">&#10005;</button>`+
+                    // `<button class="btn btn-primary btn-sm" onClick="openFileEdit(${val.file_idx}, ${val.accre_area}, '${val.file_desc}')" data-bs-toggle="modal" data-bs-target="#editFileModal">&#9998;</button>`+
+                    '</td>'+
                     // `<td class="text-end d-flex"><button onClick="deleteFile(${val.file_idx}, ${val.accre_area})" class="btn btn-danger btn-sm mb-2 mb-md-0 me-2">&#10005;</button>`+
                     // `<button class="btn btn-primary btn-sm" onClick="openFileEdit(${val.file_idx}, ${val.accre_area}, '${val.file_desc}')" data-bs-toggle="modal" data-bs-target="#editFileModal">&#9998;</button>`+
                     // '</td>'+
@@ -500,7 +502,7 @@ function openDoc(src, name){
 
 
     
-function deleteFile(id, areaId){
+function deleteFile(id){
    
         const filename = getFileName(id);
         // const area = getAccreArea(areaId);

@@ -89,7 +89,7 @@
    </div>
   </div>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-orange">
+  <nav class="navbar navbar-expand-lg navbar-light bg-orange" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="/psub"><img src="img/psu-logo.png"  height="30" width="30" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -147,7 +147,7 @@
     <div class="db-section active" id="files">
       <div class="clearfix mb-4 border-bottom border-2">
         <h4 class="fw-light float-start">Document Uploading Section</h4>
-        <div class="float-end">
+        <div class="float-end" id="createBtns">
           <!-- <a href="#"  class="btn btn-outline-primary  me-3" data-bs-toggle="modal" data-bs-target="#dirModal">Folder &#10010;</a> -->
           <button  class="btn btn-outline-primary d-none" id="btnFile" name="btnFile" data-bs-toggle="modal" data-bs-target="#fileModal">File &#10010;</button>
 
@@ -353,7 +353,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="btn-saveDir" onclick="saveFileEdit()">Save New Folder</button>
+        <button type="button" class="btn btn-primary" id="btn-saveDir" onclick="saveFileEdit()">Save Changes</button>
       </div>
     </div>
   </div>

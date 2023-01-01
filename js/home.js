@@ -41,6 +41,22 @@ $(document).ready(function(){
           
 });
 
+window.addEventListener("scroll", function() {
+
+    const maxHeight = document.body.scrollHeight - window.innerHeight;
+   var scrollPct = (window.pageYOffset * 100) / maxHeight;
+    if (scrollPct >= 30){
+        if ($("#mainNav").hasClass('position-fixed top-0 start-0 full-width-front')) {
+            return;
+        } else {
+            $("#mainNav").addClass('position-fixed top-0 start-0 full-width-front')
+        }
+    } else {
+        $("#mainNav").removeClass('position-fixed top-0 start-0 full-width-front')
+    }
+   
+});
+
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),

@@ -101,7 +101,7 @@
               'version' => 'latest',
               'credentials' => [
                   'key'    => "0.",
-                  'secret' => "000000000000000000000",
+                  'secret' => "000000",
               ]
             ]);		
 

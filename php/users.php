@@ -141,17 +141,20 @@ function newUser(){
     $usertype = isset($_POST["modFlag"]) ? 1 : 2;
     $username = trim($_POST['username']);
     $email = trim($_POST['useremail']);
-    
+    $secret = $_POST["sqa"] === "" ? NULL : $_POST["secretQuestion"];
+    $sqa = $_POST["sqa"] === "" ? NULL : $_POST["sqa"];
 
     $conn = mysqli_connect(servername, dbuser, dbpw, dbname);
-    $stmt = mysqli_prepare($conn, "INSERT INTO `users_table`(`username`, `email`, `password`, `usertype`) VALUES (?,?,?,?)");
+    $stmt = mysqli_prepare($conn, "INSERT INTO `users_table`(`username`, `email`, `password`, `usertype`, `secret`, `answer`) VALUES (?,?,?,?,?,?)");
     mysqli_stmt_bind_param(
       $stmt,
-       'sssi',
+       'sssiss',
         $username,
          $email,
          $password,
          $usertype,
+         $secret,
+         $sqa
           );
     $stmt->execute();
 

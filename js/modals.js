@@ -186,6 +186,7 @@ async function saveFile(){
               console.log(files);
               contentPop(currentTier, currentDir);
               $(".file-success").text(data.message);
+              $("#fileModal").modal('toggle');
           } else {
               $(".file-error").text(data.message);
           }
