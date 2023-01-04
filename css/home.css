@@ -25,6 +25,11 @@
     font-weight: 600;
 }
 
+.full-width-front{
+    z-index: 999;
+    width: 100vw;
+}
+
 .svg-icons {
     background-color: rgba(184, 83, 39, 0.4)
 }

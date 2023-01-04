@@ -183,6 +183,8 @@ function formatDate(str){
                     var newUser = {userid: data.idx, username: username}
                     users.push(newUser);
                     userPop();
+                    $("#newUserModal").modal('toggle');
+                    $("#newUserModal").trigger('reset');
                }
             }
     
